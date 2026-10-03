@@ -1,0 +1,27 @@
+[
+  {
+    "id": "DOC001",
+    "title": "Authentication Requirement",
+    "text": "Successful exploitation of the vulnerability requires authenticated access. Unauthenticated users cannot execute the attack."
+  },
+  {
+    "id": "DOC002",
+    "title": "Version Range",
+    "text": "The vulnerability affects software versions 2.0 through 2.5. Version 2.6 contains the security patch."
+  },
+  {
+    "id": "DOC003",
+    "title": "Feature Condition",
+    "text": "Remote exploitation is possible only when Feature A is enabled."
+  },
+  {
+    "id": "DOC004",
+    "title": "Administrative Privilege",
+    "text": "Successful exploitation requires administrator privileges on the target system."
+  },
+  {
+    "id": "DOC005",
+    "title": "Mitigation Exception",
+    "text": "The mitigation protects affected systems except when legacy configuration mode is enabled."
+  }
+]

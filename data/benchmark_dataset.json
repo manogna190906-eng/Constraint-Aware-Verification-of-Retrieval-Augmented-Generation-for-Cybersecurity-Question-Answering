@@ -1,0 +1,242 @@
+[
+  {
+    "id": "BM001",
+    "constraint_type": "NEGATION",
+    "question": "Can an unauthenticated user exploit this vulnerability?",
+    "evidence": "Unauthenticated users cannot execute the attack. Authentication is required before exploitation is possible.",
+    "answer": "No, unauthenticated users cannot execute the attack because authentication is required first.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM002",
+    "constraint_type": "NEGATION",
+    "question": "Can an unauthenticated user exploit this vulnerability?",
+    "evidence": "Unauthenticated users cannot execute the attack. Authentication is required before exploitation is possible.",
+    "answer": "Yes, an unauthenticated user can execute the attack without needing to log in.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM003",
+    "constraint_type": "NEGATION",
+    "question": "Is the system able to detect this intrusion attempt?",
+    "evidence": "The intrusion detection system cannot identify encrypted payloads. Encrypted traffic bypasses signature-based detection.",
+    "answer": "No, the system cannot detect encrypted intrusion payloads because they bypass signature-based detection.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM004",
+    "constraint_type": "NEGATION",
+    "question": "Is the system able to detect this intrusion attempt?",
+    "evidence": "The intrusion detection system cannot identify encrypted payloads. Encrypted traffic bypasses signature-based detection.",
+    "answer": "Yes, the system can detect encrypted intrusion payloads using its signature database.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM005",
+    "constraint_type": "NEGATION",
+    "question": "Can a remote attacker modify the configuration file directly?",
+    "evidence": "Remote attackers cannot modify the configuration file directly. File system permissions block remote write access.",
+    "answer": "No, remote attackers cannot modify the configuration file directly due to file system permission restrictions.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM006",
+    "constraint_type": "NEGATION",
+    "question": "Can a remote attacker modify the configuration file directly?",
+    "evidence": "Remote attackers cannot modify the configuration file directly. File system permissions block remote write access.",
+    "answer": "Yes, a remote attacker can modify the configuration file directly over the network.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM007",
+    "constraint_type": "PREREQUISITE",
+    "question": "What privilege level is needed to exploit this vulnerability?",
+    "evidence": "Successful exploitation requires administrator privileges on the target system.",
+    "answer": "Administrator privileges are required to successfully exploit this vulnerability.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM008",
+    "constraint_type": "PREREQUISITE",
+    "question": "What privilege level is needed to exploit this vulnerability?",
+    "evidence": "Successful exploitation requires administrator privileges on the target system.",
+    "answer": "The vulnerability can be exploited without administrator privileges, using a standard user account.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM009",
+    "constraint_type": "PREREQUISITE",
+    "question": "Does deploying the patch require a system reboot?",
+    "evidence": "Installing the patch requires a full system reboot to take effect. The service will not apply changes without a restart.",
+    "answer": "Yes, installing the patch requires a full system reboot for the changes to take effect.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM010",
+    "constraint_type": "PREREQUISITE",
+    "question": "Does deploying the patch require a system reboot?",
+    "evidence": "Installing the patch requires a full system reboot to take effect. The service will not apply changes without a restart.",
+    "answer": "No, the patch can be installed and applied without rebooting the system.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM011",
+    "constraint_type": "PREREQUISITE",
+    "question": "What network access does exploitation require?",
+    "evidence": "Exploitation requires direct network access to port 8443 on the target host.",
+    "answer": "Direct network access to port 8443 on the target host is required to exploit this vulnerability.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM012",
+    "constraint_type": "PREREQUISITE",
+    "question": "What network access does exploitation require?",
+    "evidence": "Exploitation requires direct network access to port 8443 on the target host.",
+    "answer": "This vulnerability can be exploited without any network access to the target host.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM013",
+    "constraint_type": "CONDITION",
+    "question": "Under what condition is remote exploitation possible?",
+    "evidence": "Remote exploitation is possible only when Feature A is enabled on the target system.",
+    "answer": "Remote exploitation is possible only when Feature A is enabled.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM014",
+    "constraint_type": "CONDITION",
+    "question": "Under what condition is remote exploitation possible?",
+    "evidence": "Remote exploitation is possible only when Feature A is enabled on the target system.",
+    "answer": "Remote exploitation is possible even when Feature A is disabled.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM015",
+    "constraint_type": "CONDITION",
+    "question": "When does the mitigation fail to protect the system?",
+    "evidence": "The mitigation protects affected systems except when legacy configuration mode is enabled.",
+    "answer": "The mitigation does not protect systems when legacy configuration mode is enabled.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM016",
+    "constraint_type": "CONDITION",
+    "question": "When does the mitigation fail to protect the system?",
+    "evidence": "The mitigation protects affected systems except when legacy configuration mode is enabled.",
+    "answer": "The mitigation protects all systems even when legacy configuration mode is enabled.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM017",
+    "constraint_type": "CONDITION",
+    "question": "Is data encrypted during transmission?",
+    "evidence": "Data is transmitted in encrypted form only when TLS 1.2 or higher is negotiated by both endpoints.",
+    "answer": "Data is only encrypted during transmission when TLS 1.2 or higher is negotiated.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM018",
+    "constraint_type": "CONDITION",
+    "question": "Is data encrypted during transmission?",
+    "evidence": "Data is transmitted in encrypted form only when TLS 1.2 or higher is negotiated by both endpoints.",
+    "answer": "Data is always encrypted during transmission, regardless of the TLS version negotiated.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM019",
+    "constraint_type": "VERSION",
+    "question": "Is version 2.6 vulnerable to this attack?",
+    "evidence": "The vulnerability affects software versions 2.0 through 2.5. Version 2.6 contains the security patch.",
+    "answer": "No, version 2.6 is not vulnerable because it contains the security patch.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM020",
+    "constraint_type": "VERSION",
+    "question": "Is version 2.6 vulnerable to this attack?",
+    "evidence": "The vulnerability affects software versions 2.0 through 2.5. Version 2.6 contains the security patch.",
+    "answer": "Yes, version 2.6 is vulnerable to the attack.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM021",
+    "constraint_type": "CONDITION",
+    "question": "When is the firewall rule bypassed?",
+    "evidence": "The firewall rule blocks all inbound traffic except when the source IP is on the internal allowlist.",
+    "answer": "The firewall rule is bypassed when the source IP is on the internal allowlist.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM022",
+    "constraint_type": "CONDITION",
+    "question": "When is the firewall rule bypassed?",
+    "evidence": "The firewall rule blocks all inbound traffic except when the source IP is on the internal allowlist.",
+    "answer": "The firewall rule blocks all inbound traffic with no exceptions, regardless of source IP.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM023",
+    "constraint_type": "CONDITION",
+    "question": "Does the session token expire automatically?",
+    "evidence": "The session token does not expire automatically unless the user manually logs out.",
+    "answer": "The session token stays valid unless the user manually logs out.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM024",
+    "constraint_type": "CONDITION",
+    "question": "Does the session token expire automatically?",
+    "evidence": "The session token does not expire automatically unless the user manually logs out.",
+    "answer": "The session token expires automatically after a few minutes, regardless of user activity.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM025",
+    "constraint_type": "NEGATION",
+    "question": "Can the malware spread across the network without user interaction?",
+    "evidence": "The malware cannot spread across the network without user interaction. A user must open the attachment first.",
+    "answer": "No, the malware is unable to spread across the network unless a user opens the attachment.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM026",
+    "constraint_type": "NEGATION",
+    "question": "Can the malware spread across the network without user interaction?",
+    "evidence": "The malware cannot spread across the network without user interaction. A user must open the attachment first.",
+    "answer": "Yes, the malware is capable of spreading across the network automatically with no user interaction needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM027",
+    "constraint_type": "PREREQUISITE",
+    "question": "What access level is needed to read the log files?",
+    "evidence": "Reading the log files requires root-level access to the server.",
+    "answer": "Root-level access to the server is needed in order to read the log files.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM028",
+    "constraint_type": "PREREQUISITE",
+    "question": "What access level is needed to read the log files?",
+    "evidence": "Reading the log files requires root-level access to the server.",
+    "answer": "The log files can be read by any user, no elevated access needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM029",
+    "constraint_type": "VERSION",
+    "question": "Is version 4.1 affected by this flaw?",
+    "evidence": "The flaw impacts versions 3.8 through 4.0. Version 4.1 resolves the issue with a security update.",
+    "answer": "No, version 4.1 is not affected because it includes a security update that resolves the flaw.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM030",
+    "constraint_type": "VERSION",
+    "question": "Is version 4.1 affected by this flaw?",
+    "evidence": "The flaw impacts versions 3.8 through 4.0. Version 4.1 resolves the issue with a security update.",
+    "answer": "Yes, version 4.1 is still affected by the flaw.",
+    "label": "RISKY"
+  }
+]

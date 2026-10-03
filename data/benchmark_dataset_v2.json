@@ -1,0 +1,642 @@
+[
+  {
+    "id": "BM001",
+    "constraint_type": "NEGATION",
+    "question": "Can an unauthenticated user exploit this vulnerability?",
+    "evidence": "Unauthenticated users cannot execute the attack. Authentication is required before exploitation is possible.",
+    "answer": "No, unauthenticated users cannot execute the attack because authentication is required first.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM002",
+    "constraint_type": "NEGATION",
+    "question": "Can an unauthenticated user exploit this vulnerability?",
+    "evidence": "Unauthenticated users cannot execute the attack. Authentication is required before exploitation is possible.",
+    "answer": "Yes, an unauthenticated user can execute the attack without needing to log in.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM003",
+    "constraint_type": "NEGATION",
+    "question": "Is the system able to detect this intrusion attempt?",
+    "evidence": "The intrusion detection system cannot identify encrypted payloads. Encrypted traffic bypasses signature-based detection.",
+    "answer": "No, the system cannot detect encrypted intrusion payloads because they bypass signature-based detection.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM004",
+    "constraint_type": "NEGATION",
+    "question": "Is the system able to detect this intrusion attempt?",
+    "evidence": "The intrusion detection system cannot identify encrypted payloads. Encrypted traffic bypasses signature-based detection.",
+    "answer": "Yes, the system can detect encrypted intrusion payloads using its signature database.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM005",
+    "constraint_type": "NEGATION",
+    "question": "Can a remote attacker modify the configuration file directly?",
+    "evidence": "Remote attackers cannot modify the configuration file directly. File system permissions block remote write access.",
+    "answer": "No, remote attackers cannot modify the configuration file directly due to file system permission restrictions.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM006",
+    "constraint_type": "NEGATION",
+    "question": "Can a remote attacker modify the configuration file directly?",
+    "evidence": "Remote attackers cannot modify the configuration file directly. File system permissions block remote write access.",
+    "answer": "Yes, a remote attacker can modify the configuration file directly over the network.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM007",
+    "constraint_type": "PREREQUISITE",
+    "question": "What privilege level is needed to exploit this vulnerability?",
+    "evidence": "Successful exploitation requires administrator privileges on the target system.",
+    "answer": "Administrator privileges are required to successfully exploit this vulnerability.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM008",
+    "constraint_type": "PREREQUISITE",
+    "question": "What privilege level is needed to exploit this vulnerability?",
+    "evidence": "Successful exploitation requires administrator privileges on the target system.",
+    "answer": "The vulnerability can be exploited without administrator privileges, using a standard user account.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM009",
+    "constraint_type": "PREREQUISITE",
+    "question": "Does deploying the patch require a system reboot?",
+    "evidence": "Installing the patch requires a full system reboot to take effect. The service will not apply changes without a restart.",
+    "answer": "Yes, installing the patch requires a full system reboot for the changes to take effect.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM010",
+    "constraint_type": "PREREQUISITE",
+    "question": "Does deploying the patch require a system reboot?",
+    "evidence": "Installing the patch requires a full system reboot to take effect. The service will not apply changes without a restart.",
+    "answer": "No, the patch can be installed and applied without rebooting the system.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM011",
+    "constraint_type": "PREREQUISITE",
+    "question": "What network access does exploitation require?",
+    "evidence": "Exploitation requires direct network access to port 8443 on the target host.",
+    "answer": "Direct network access to port 8443 on the target host is required to exploit this vulnerability.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM012",
+    "constraint_type": "PREREQUISITE",
+    "question": "What network access does exploitation require?",
+    "evidence": "Exploitation requires direct network access to port 8443 on the target host.",
+    "answer": "This vulnerability can be exploited without any network access to the target host.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM013",
+    "constraint_type": "CONDITION",
+    "question": "Under what condition is remote exploitation possible?",
+    "evidence": "Remote exploitation is possible only when Feature A is enabled on the target system.",
+    "answer": "Remote exploitation is possible only when Feature A is enabled.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM014",
+    "constraint_type": "CONDITION",
+    "question": "Under what condition is remote exploitation possible?",
+    "evidence": "Remote exploitation is possible only when Feature A is enabled on the target system.",
+    "answer": "Remote exploitation is possible even when Feature A is disabled.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM015",
+    "constraint_type": "CONDITION",
+    "question": "When does the mitigation fail to protect the system?",
+    "evidence": "The mitigation protects affected systems except when legacy configuration mode is enabled.",
+    "answer": "The mitigation does not protect systems when legacy configuration mode is enabled.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM016",
+    "constraint_type": "CONDITION",
+    "question": "When does the mitigation fail to protect the system?",
+    "evidence": "The mitigation protects affected systems except when legacy configuration mode is enabled.",
+    "answer": "The mitigation protects all systems even when legacy configuration mode is enabled.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM017",
+    "constraint_type": "CONDITION",
+    "question": "Is data encrypted during transmission?",
+    "evidence": "Data is transmitted in encrypted form only when TLS 1.2 or higher is negotiated by both endpoints.",
+    "answer": "Data is only encrypted during transmission when TLS 1.2 or higher is negotiated.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM018",
+    "constraint_type": "CONDITION",
+    "question": "Is data encrypted during transmission?",
+    "evidence": "Data is transmitted in encrypted form only when TLS 1.2 or higher is negotiated by both endpoints.",
+    "answer": "Data is always encrypted during transmission, regardless of the TLS version negotiated.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM019",
+    "constraint_type": "VERSION",
+    "question": "Is version 2.6 vulnerable to this attack?",
+    "evidence": "The vulnerability affects software versions 2.0 through 2.5. Version 2.6 contains the security patch.",
+    "answer": "No, version 2.6 is not vulnerable because it contains the security patch.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM020",
+    "constraint_type": "VERSION",
+    "question": "Is version 2.6 vulnerable to this attack?",
+    "evidence": "The vulnerability affects software versions 2.0 through 2.5. Version 2.6 contains the security patch.",
+    "answer": "Yes, version 2.6 is vulnerable to the attack.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM021",
+    "constraint_type": "CONDITION",
+    "question": "When is the firewall rule bypassed?",
+    "evidence": "The firewall rule blocks all inbound traffic except when the source IP is on the internal allowlist.",
+    "answer": "The firewall rule is bypassed when the source IP is on the internal allowlist.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM022",
+    "constraint_type": "CONDITION",
+    "question": "When is the firewall rule bypassed?",
+    "evidence": "The firewall rule blocks all inbound traffic except when the source IP is on the internal allowlist.",
+    "answer": "The firewall rule blocks all inbound traffic with no exceptions, regardless of source IP.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM023",
+    "constraint_type": "CONDITION",
+    "question": "Does the session token expire automatically?",
+    "evidence": "The session token does not expire automatically unless the user manually logs out.",
+    "answer": "The session token stays valid unless the user manually logs out.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM024",
+    "constraint_type": "CONDITION",
+    "question": "Does the session token expire automatically?",
+    "evidence": "The session token does not expire automatically unless the user manually logs out.",
+    "answer": "The session token expires automatically after a few minutes, regardless of user activity.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM025",
+    "constraint_type": "NEGATION",
+    "question": "Can the malware spread across the network without user interaction?",
+    "evidence": "The malware cannot spread across the network without user interaction. A user must open the attachment first.",
+    "answer": "No, the malware is unable to spread across the network unless a user opens the attachment.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM026",
+    "constraint_type": "NEGATION",
+    "question": "Can the malware spread across the network without user interaction?",
+    "evidence": "The malware cannot spread across the network without user interaction. A user must open the attachment first.",
+    "answer": "Yes, the malware is capable of spreading across the network automatically with no user interaction needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM027",
+    "constraint_type": "PREREQUISITE",
+    "question": "What access level is needed to read the log files?",
+    "evidence": "Reading the log files requires root-level access to the server.",
+    "answer": "Root-level access to the server is needed in order to read the log files.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM028",
+    "constraint_type": "PREREQUISITE",
+    "question": "What access level is needed to read the log files?",
+    "evidence": "Reading the log files requires root-level access to the server.",
+    "answer": "The log files can be read by any user, no elevated access needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM029",
+    "constraint_type": "VERSION",
+    "question": "Is version 4.1 affected by this flaw?",
+    "evidence": "The flaw impacts versions 3.8 through 4.0. Version 4.1 resolves the issue with a security update.",
+    "answer": "No, version 4.1 is not affected because it includes a security update that resolves the flaw.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM030",
+    "constraint_type": "VERSION",
+    "question": "Is version 4.1 affected by this flaw?",
+    "evidence": "The flaw impacts versions 3.8 through 4.0. Version 4.1 resolves the issue with a security update.",
+    "answer": "Yes, version 4.1 is still affected by the flaw.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM031",
+    "constraint_type": "NEGATION",
+    "question": "Can a guest account access the admin panel?",
+    "evidence": "Guest accounts cannot access the admin panel. Admin panel access is restricted to accounts with the administrator role.",
+    "answer": "No, guest accounts cannot access the admin panel because it is restricted to administrator-role accounts.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM032",
+    "constraint_type": "NEGATION",
+    "question": "Can a guest account access the admin panel?",
+    "evidence": "Guest accounts cannot access the admin panel. Admin panel access is restricted to accounts with the administrator role.",
+    "answer": "Yes, a guest account can access the admin panel directly.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM033",
+    "constraint_type": "NEGATION",
+    "question": "Is the backup server reachable from the public internet?",
+    "evidence": "The backup server cannot be reached from the public internet. It is isolated on a private management VLAN.",
+    "answer": "No, the backup server cannot be reached from the public internet since it sits on a private management VLAN.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM034",
+    "constraint_type": "NEGATION",
+    "question": "Is the backup server reachable from the public internet?",
+    "evidence": "The backup server cannot be reached from the public internet. It is isolated on a private management VLAN.",
+    "answer": "Yes, the backup server is reachable from the public internet.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM035",
+    "constraint_type": "NEGATION",
+    "question": "Can a compromised container escape to the host OS?",
+    "evidence": "A compromised container cannot escape to the host OS under the current sandboxing configuration.",
+    "answer": "No, a compromised container cannot escape to the host OS given the current sandboxing setup.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM036",
+    "constraint_type": "NEGATION",
+    "question": "Can a compromised container escape to the host OS?",
+    "evidence": "A compromised container cannot escape to the host OS under the current sandboxing configuration.",
+    "answer": "Yes, a compromised container can escape to the host OS.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM037",
+    "constraint_type": "NEGATION",
+    "question": "Can the API be called without an API key?",
+    "evidence": "The API cannot be called without a valid API key. Every request is authenticated at the gateway.",
+    "answer": "No, the API cannot be called without a valid API key since every request is authenticated at the gateway.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM038",
+    "constraint_type": "NEGATION",
+    "question": "Can the API be called without an API key?",
+    "evidence": "The API cannot be called without a valid API key. Every request is authenticated at the gateway.",
+    "answer": "Yes, the API can be called without any API key.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM039",
+    "constraint_type": "NEGATION",
+    "question": "Can a locked account be used to log in?",
+    "evidence": "A locked account cannot be used to log in until an administrator manually unlocks it.",
+    "answer": "No, a locked account cannot log in until an administrator manually unlocks it.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM040",
+    "constraint_type": "NEGATION",
+    "question": "Can a locked account be used to log in?",
+    "evidence": "A locked account cannot be used to log in until an administrator manually unlocks it.",
+    "answer": "Yes, a locked account can still be used to log in normally.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM041",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to decrypt the stored backups?",
+    "evidence": "Decrypting the stored backups requires the master encryption key held in the hardware security module.",
+    "answer": "The master encryption key from the hardware security module is required to decrypt the stored backups.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM042",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to decrypt the stored backups?",
+    "evidence": "Decrypting the stored backups requires the master encryption key held in the hardware security module.",
+    "answer": "The stored backups can be decrypted without needing the master encryption key.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM043",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is needed to trigger the buffer overflow?",
+    "evidence": "Triggering the buffer overflow requires sending a crafted packet larger than 4096 bytes.",
+    "answer": "Sending a crafted packet larger than 4096 bytes is required to trigger the buffer overflow.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM044",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is needed to trigger the buffer overflow?",
+    "evidence": "Triggering the buffer overflow requires sending a crafted packet larger than 4096 bytes.",
+    "answer": "The buffer overflow can be triggered with a normal, undersized packet, no special crafting needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM045",
+    "constraint_type": "PREREQUISITE",
+    "question": "What does restoring from snapshot require?",
+    "evidence": "Restoring from a snapshot requires at least 20GB of free disk space on the target volume.",
+    "answer": "At least 20GB of free disk space on the target volume is required to restore from a snapshot.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM046",
+    "constraint_type": "PREREQUISITE",
+    "question": "What does restoring from snapshot require?",
+    "evidence": "Restoring from a snapshot requires at least 20GB of free disk space on the target volume.",
+    "answer": "A snapshot can be restored with no free disk space required on the target volume.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM047",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to escalate privileges through this bug?",
+    "evidence": "Escalating privileges through this bug requires local shell access to the target machine.",
+    "answer": "Local shell access to the target machine is required to escalate privileges through this bug.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM048",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to escalate privileges through this bug?",
+    "evidence": "Escalating privileges through this bug requires local shell access to the target machine.",
+    "answer": "Privileges can be escalated through this bug remotely, without local shell access.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM049",
+    "constraint_type": "PREREQUISITE",
+    "question": "What does enabling debug mode require?",
+    "evidence": "Enabling debug mode requires a signed configuration flag issued by the vendor.",
+    "answer": "A signed configuration flag issued by the vendor is required to enable debug mode.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM050",
+    "constraint_type": "PREREQUISITE",
+    "question": "What does enabling debug mode require?",
+    "evidence": "Enabling debug mode requires a signed configuration flag issued by the vendor.",
+    "answer": "Debug mode can be enabled by any user, no signed flag needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM051",
+    "constraint_type": "CONDITION",
+    "question": "When is the API rate limit lifted?",
+    "evidence": "The API rate limit applies except when the request originates from an internal service account.",
+    "answer": "The API rate limit does not apply when the request comes from an internal service account.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM052",
+    "constraint_type": "CONDITION",
+    "question": "When is the API rate limit lifted?",
+    "evidence": "The API rate limit applies except when the request originates from an internal service account.",
+    "answer": "The API rate limit always applies to every request, regardless of the account making it.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM053",
+    "constraint_type": "CONDITION",
+    "question": "When does the alert suppress notifications?",
+    "evidence": "The alert suppresses notifications only when the system is in scheduled maintenance mode.",
+    "answer": "The alert only suppresses notifications when the system is in scheduled maintenance mode.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM054",
+    "constraint_type": "CONDITION",
+    "question": "When does the alert suppress notifications?",
+    "evidence": "The alert suppresses notifications only when the system is in scheduled maintenance mode.",
+    "answer": "The alert suppresses notifications at all times, even outside of maintenance mode.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM055",
+    "constraint_type": "CONDITION",
+    "question": "Does the audit log ever stop recording?",
+    "evidence": "The audit log does not stop recording unless the storage volume is completely full.",
+    "answer": "The audit log keeps recording unless the storage volume is completely full.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM056",
+    "constraint_type": "CONDITION",
+    "question": "Does the audit log ever stop recording?",
+    "evidence": "The audit log does not stop recording unless the storage volume is completely full.",
+    "answer": "The audit log stops recording periodically, regardless of storage volume status.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM057",
+    "constraint_type": "CONDITION",
+    "question": "When can the exploit bypass the WAF?",
+    "evidence": "The exploit can bypass the WAF only when requests are sent using chunked transfer encoding.",
+    "answer": "The exploit bypasses the WAF only when chunked transfer encoding is used.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM058",
+    "constraint_type": "CONDITION",
+    "question": "When can the exploit bypass the WAF?",
+    "evidence": "The exploit can bypass the WAF only when requests are sent using chunked transfer encoding.",
+    "answer": "The exploit bypasses the WAF regardless of the transfer encoding used.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM059",
+    "constraint_type": "CONDITION",
+    "question": "When is multi-factor authentication skipped?",
+    "evidence": "Multi-factor authentication is skipped except when the login originates from an untrusted device.",
+    "answer": "Multi-factor authentication is not skipped when the login comes from an untrusted device.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM060",
+    "constraint_type": "CONDITION",
+    "question": "When is multi-factor authentication skipped?",
+    "evidence": "Multi-factor authentication is skipped except when the login originates from an untrusted device.",
+    "answer": "Multi-factor authentication is always skipped, regardless of whether the device is trusted.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM061",
+    "constraint_type": "VERSION",
+    "question": "Is version 1.9 affected by this SQL injection flaw?",
+    "evidence": "The SQL injection flaw affects versions 1.5 through 1.8. Version 1.9 contains the security patch.",
+    "answer": "No, version 1.9 is not affected because it contains the security patch.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM062",
+    "constraint_type": "VERSION",
+    "question": "Is version 1.9 affected by this SQL injection flaw?",
+    "evidence": "The SQL injection flaw affects versions 1.5 through 1.8. Version 1.9 contains the security patch.",
+    "answer": "Yes, version 1.9 is vulnerable to the SQL injection flaw.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM063",
+    "constraint_type": "VERSION",
+    "question": "Is version 7.3 impacted by the privilege escalation bug?",
+    "evidence": "The privilege escalation bug impacts versions 7.0 through 7.2. Version 7.3 resolves the issue.",
+    "answer": "No, version 7.3 is not impacted since it resolves the issue.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM064",
+    "constraint_type": "VERSION",
+    "question": "Is version 7.3 impacted by the privilege escalation bug?",
+    "evidence": "The privilege escalation bug impacts versions 7.0 through 7.2. Version 7.3 resolves the issue.",
+    "answer": "Yes, version 7.3 is still affected by the privilege escalation bug.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM065",
+    "constraint_type": "VERSION",
+    "question": "Does version 3.4 contain the fix for the auth bypass?",
+    "evidence": "Versions 3.0 through 3.3 are affected by the authentication bypass. Version 3.4 contains the security patch.",
+    "answer": "Yes, version 3.4 contains the security patch and is not affected by the authentication bypass.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM066",
+    "constraint_type": "VERSION",
+    "question": "Does version 3.4 contain the fix for the auth bypass?",
+    "evidence": "Versions 3.0 through 3.3 are affected by the authentication bypass. Version 3.4 contains the security patch.",
+    "answer": "No, version 3.4 is vulnerable to the authentication bypass.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM067",
+    "constraint_type": "VERSION",
+    "question": "Is version 5.2 safe from the remote code execution bug?",
+    "evidence": "The remote code execution bug affects versions 5.0 through 5.1. Version 5.2 resolves the issue.",
+    "answer": "Yes, version 5.2 is safe because it resolves the issue.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM068",
+    "constraint_type": "VERSION",
+    "question": "Is version 5.2 safe from the remote code execution bug?",
+    "evidence": "The remote code execution bug affects versions 5.0 through 5.1. Version 5.2 resolves the issue.",
+    "answer": "Version 5.2 is still affected by the remote code execution bug.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM069",
+    "constraint_type": "NEGATION",
+    "question": "Can an expired certificate be used to establish a TLS session?",
+    "evidence": "An expired certificate cannot be used to establish a TLS session. Clients reject the handshake automatically.",
+    "answer": "No, an expired certificate cannot be used to establish a TLS session since clients reject the handshake automatically.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM070",
+    "constraint_type": "NEGATION",
+    "question": "Can an expired certificate be used to establish a TLS session?",
+    "evidence": "An expired certificate cannot be used to establish a TLS session. Clients reject the handshake automatically.",
+    "answer": "Yes, an expired certificate can still be used to establish a TLS session without issue.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM071",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to replay this authentication token?",
+    "evidence": "Replaying this authentication token requires capturing it before its 60-second expiry window closes.",
+    "answer": "Capturing the token before its 60-second expiry window closes is required to replay it.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM072",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is required to replay this authentication token?",
+    "evidence": "Replaying this authentication token requires capturing it before its 60-second expiry window closes.",
+    "answer": "The authentication token can be replayed at any time, with no expiry window to worry about.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM073",
+    "constraint_type": "CONDITION",
+    "question": "When does the load balancer route to the standby node?",
+    "evidence": "The load balancer routes to the standby node only when the primary node fails a health check.",
+    "answer": "The load balancer only routes to the standby node when the primary node fails a health check.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM074",
+    "constraint_type": "CONDITION",
+    "question": "When does the load balancer route to the standby node?",
+    "evidence": "The load balancer routes to the standby node only when the primary node fails a health check.",
+    "answer": "The load balancer routes to the standby node continuously, regardless of the primary node's health.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM075",
+    "constraint_type": "NEGATION",
+    "question": "Can a read-only replica accept write queries?",
+    "evidence": "A read-only replica cannot accept write queries. Writes must go through the primary database.",
+    "answer": "No, a read-only replica cannot accept write queries; writes must go through the primary database.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM076",
+    "constraint_type": "NEGATION",
+    "question": "Can a read-only replica accept write queries?",
+    "evidence": "A read-only replica cannot accept write queries. Writes must go through the primary database.",
+    "answer": "Yes, a read-only replica can accept write queries directly.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM077",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is needed to access the encrypted volume after reboot?",
+    "evidence": "Accessing the encrypted volume after reboot requires entering the passphrase manually at boot time.",
+    "answer": "Entering the passphrase manually at boot time is required to access the encrypted volume after reboot.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM078",
+    "constraint_type": "PREREQUISITE",
+    "question": "What is needed to access the encrypted volume after reboot?",
+    "evidence": "Accessing the encrypted volume after reboot requires entering the passphrase manually at boot time.",
+    "answer": "The encrypted volume mounts automatically after reboot with no passphrase needed.",
+    "label": "RISKY"
+  },
+  {
+    "id": "BM079",
+    "constraint_type": "CONDITION",
+    "question": "When is outbound traffic blocked by the egress filter?",
+    "evidence": "Outbound traffic is blocked by the egress filter unless the destination is on the approved allowlist.",
+    "answer": "Outbound traffic is blocked unless the destination is on the approved allowlist.",
+    "label": "RELIABLE"
+  },
+  {
+    "id": "BM080",
+    "constraint_type": "CONDITION",
+    "question": "When is outbound traffic blocked by the egress filter?",
+    "evidence": "Outbound traffic is blocked by the egress filter unless the destination is on the approved allowlist.",
+    "answer": "Outbound traffic is never blocked by the egress filter, regardless of the destination.",
+    "label": "RISKY"
+  }
+]
